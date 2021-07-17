@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { useState,useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import {FetchImage,SearchedImage} from './Components/Api';
+import Image from './Components/Image';
+function App() 
+{
+ const [query,setQuery] = useState()
+ const [Searchvalue,setSearch] = useState()
+ const data= FetchImage()
+//  console.log(SearchedImage(query))
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ const Search=()=>{
+  setSearch(query)
+ }
+ const searchData = SearchedImage(Searchvalue)
+ console.log(searchData)
+//  console.log(query)
+  return (<div className="App"> 
+    <div>
+      <input type="text" onChange={(event) =>setQuery(event.target.value)}/>
+      <button onClick={Search}>Search</button>
     </div>
-  );
+    <div className="container">
+    {Searchvalue ? searchData.map((imag,key) => (
+      <Image  src={imag.url} key={key} title={imag.title} />
+    )   ):
+    data.map((imag,key) => (
+      <Image  src={imag.url} key={key} title={imag.title} />
+    )   )}
+    </div>
+    </div>);
 }
 
 export default App;
