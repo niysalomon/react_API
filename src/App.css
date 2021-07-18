@@ -2,28 +2,31 @@
   text-align: center;
   background-color: rgb(156, 156, 143);
 }
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App input{
   margin-top: 3rem;
   border-radius: 0.5rem 0rem 0rem 0.5rem;
 }
-
+ 
 .container {
   text-align: center;
   padding: 10px;
   margin-top: 10px;
   background-color: #282c34;
   width: 50%;
-  height: 50%;
-
+  height: 650px;
+  position: relative;
+  overflow-y: scroll; 
 }
+ .section{
+   background-color: rgb(132, 140, 148);
+   
+
+  
+  
+ }
+ 
+  
+
 .container img {
   border: 1px solid rgb(239, 239, 241);
   border-radius: 4px;
@@ -39,8 +42,12 @@
 
 }
 .container span{
-  color: #ddd;
+  color: rgb(14, 13, 13);
   font-size: medium;
-  border-bottom: 2px solid rgb(197, 4, 45) ;
+  border-bottom: 10px solid rgb(197, 4, 45) ;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.titleclass{
+  background-color: rgb(10, 236, 59);
+  border-radius: 3rem 3rem 0rem 0rem;
 }

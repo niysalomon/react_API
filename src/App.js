@@ -22,13 +22,15 @@ function App()
       <input type="text" onChange={(event) =>setQuery(event.target.value)}/>
       <button onClick={Search}>Search</button>
     </div>
+    <div className="section">
     <div className="container">
     {Searchvalue ? searchData.map((imag,key) => (
-      <Image  src={imag.url} key={key} title={imag.title} />
+      <Image  src={imag.thumbnailUrl} key={key} title={imag.title} />
     )   ):
     data.map((imag,key) => (
-      <Image  src={imag.url} key={key} title={imag.title} />
+      <Image  src={imag.thumbnailUrl} key={key} title={imag.title} />
     )   )}
+    </div>
     </div>
     </div>);
 }
